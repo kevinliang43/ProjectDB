@@ -37,13 +37,12 @@ class base_online_scraper(object):
         return course_block
 
     def scrape(self):
-    """Calls the __setup function to obtain all course information on the page,
-    and then parses the data for each courses' individual data, including
-    course code, course name, credits and course description.
-    """
+        """Calls the __setup function to obtain all course information on the page,
+        and then parses the data for each courses individual data, including
+        course code, course name, credits and course description.
+        """
 
         course_block = self.__setup()
-
         for course in course_block:
             # Scrape information from each course block
             courseCode, courseName, credits = course.find(
