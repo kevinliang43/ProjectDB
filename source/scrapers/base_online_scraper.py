@@ -54,7 +54,10 @@ class base_online_scraper(object):
             courseDesc = course.find('p', class_="courseblockdesc").text
 
             # Clean up Strings
-            courseName.strip(" ")
+            courseCode.strip()
+            courseName = courseName[2:]
             credits.strip(" .")
             courseDesc.strip()
-            print courseCode
+
+            #print courseCode
+            print courseName
