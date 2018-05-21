@@ -1,7 +1,9 @@
 from bs4 import BeautifulSoup
 import urllib
 
+
 class base_online_scraper(object):
+
     """Class Definition for an online scraper.
     The base_online_scraper scrapes 1 page of course data from a webpage.
 
@@ -10,7 +12,7 @@ class base_online_scraper(object):
 
     def __init__(self, url):
         """Inits an instance of base_online_scraper
-        
+
         Args:
             url: A string representing the webpage that is to be scraped.
 
@@ -20,7 +22,7 @@ class base_online_scraper(object):
 
         self.url = url
 
-    def __setup(self): 
+    def __setup(self):
         """ Sets up the scraper by first opening up the url, parsing the HTML,
         and then returning a parsed portion of the HTML containing the course
         information
@@ -46,14 +48,13 @@ class base_online_scraper(object):
         for course in course_block:
             # Scrape information from each course block
             courseCode, courseName, credits = course.find(
-                                              'p', 
+                                              'p',
                                               class_="courseblocktitle"
                                               ).text.split(".", 2)
             courseDesc = course.find('p', class_="courseblockdesc").text
-            
+
             # Clean up Strings
             courseName.strip(" ")
             credits.strip(" .")
             courseDesc.strip()
             print courseCode
-
