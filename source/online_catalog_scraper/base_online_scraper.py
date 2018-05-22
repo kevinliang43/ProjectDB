@@ -55,9 +55,11 @@ class base_online_scraper(object):
 
             # Clean up Strings
             courseCode.strip()
+            courseId = courseCode[-4:]
+            courseType = courseCode[:-5]
             courseName = courseName[2:]
             credits.strip(" .")
             courseDesc.strip()
 
-            #print courseCode
-            print courseName
+            print courseType + "." + credits + "."
+            #print courseName
