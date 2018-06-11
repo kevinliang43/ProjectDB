@@ -13,5 +13,5 @@ scraper = scraper('')
 
 for a in nav_menu:
     scraper.url = BASE_URL + a['href']
-    scraper.scrape()
-
+    for course in scraper.scrape():
+        print type(course)

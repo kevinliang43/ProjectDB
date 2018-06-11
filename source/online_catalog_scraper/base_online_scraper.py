@@ -61,5 +61,7 @@ class base_online_scraper(object):
             credits.strip(" .")
             courseDesc.strip()
 
-            print courseType + "." + credits + "."
-            #print courseName
+            # Return Data as Dictionary
+            # [courseCode, courseName, credits, courseDesc]
+            returnList = [courseCode, courseName, credits, courseDesc]
+            return returnList
