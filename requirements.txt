@@ -1,6 +1,0 @@
-ProjectDB
-beautifulsoup4==4.6.0
-lxml==4.2.1
-html5lib==1.0.1
-mechanize==0.3.6
-webencodings==0.5.1
